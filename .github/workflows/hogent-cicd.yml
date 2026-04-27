@@ -15,4 +15,6 @@ jobs:
           with:
             dotnet-version: "10.0.x"
         - name: Build app
-          run: dotnet build src/PG3CiCd/PG3CiCd.csproj
+          run: dotnet build src/PG3CICDSolution.slnx
+        - name: Test app
+          run: dotnet test src/PG3CiCd.Tests/PG3CiCd.Tests.csproj

@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="PG3CiCd.Tests/PG3CiCd.Tests.csproj" />
+  <Project Path="PG3CiCd/PG3CiCd.csproj" />
+</Solution>
