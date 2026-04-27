@@ -18,3 +18,11 @@ jobs:
           run: dotnet build src/PG3CICDSolution.slnx
         - name: Test app
           run: dotnet test src/PG3CiCd.Tests/PG3CiCd.Tests.csproj
+        - name: Publish
+          run: dotnet publish src/PG3CiCd/PG3CiCd.csproj -o ${{ github.workspace }}/publish 
+        - name: Deploy
+          uses: azure/webapps-deploy@v3
+          with:
+            app-name: "pg3-cicd-demo" 
+            publish-profile: ${{ secrets.AZ_PUBLISH_PROFILE }} 
+            package: ${{ github.workspace }}/publish          
